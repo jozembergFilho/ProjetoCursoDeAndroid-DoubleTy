@@ -20,6 +20,8 @@
         <activity
             android:name=".MainActivity"
             android:screenOrientation="landscape" />
+        <activity android:name=".PraticarActivity" />
+        <activity android:name=".ManualActivity"></activity>
     </application>
 
 </manifest>
