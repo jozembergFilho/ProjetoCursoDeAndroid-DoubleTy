@@ -40,52 +40,11 @@ public class MainActivity extends AppCompatActivity {
         btnPraticar = findViewById(R.id.btn_praticar);
         btnManual = findViewById(R.id.btn_exercicios);
 
-        btnPraticar.setOnClickListener(new ClickListener(PraticarActivity.class));
-        btnManual.setOnClickListener(new ClickListener(ManualActivity.class));
-        btnSair.setOnClickListener(new ClickListener(null));
+        btnPraticar.setOnClickListener(new ClickListener(this,PraticarActivity.class));
+        btnManual.setOnClickListener(new ClickListener(this,ManualActivity.class));
+        btnSair.setOnClickListener(new ClickListener(this,null));
 
-
-
-        /*btnSair.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });*/
-
-
-        /*final View view = View.inflate(this, R.layout.activity_cadastro, null);
-
-        new AlertDialog.Builder(this).setView(view).setPositiveButton("Cadastrar", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                EditText editText = (EditText) view.findViewById(R.id.usuario);
-                String texto = editText.getText().toString();
-                if(TextUtils.isEmpty(texto)){
-                    editText.setError("Campo Vazio");
-                    editText.requestFocus();
-                }
-            }
-        }).create().show();*/
     }
-    /*private void exemplo_layout() {
-        LayoutInflater li = getLayoutInflater();
-        View view = li.inflate(R.layout.activity_cadastro, null);
-        view.findViewById(R.id.btn).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "Cadastro confirmado", Toast.LENGTH_SHORT).show();
-                alerta.dismiss();
-            }
-        });
-
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Cadastro");
-        builder.setView(view);
-        alerta = builder.create();
-        alerta.show();
-
-    }*/
     private void exbirAlertaDialog(){
         DialogFragment usuario = new CadastroUsuarioFragment();
         usuario.show(getFragmentManager(),"usuario");
@@ -93,10 +52,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private class ClickListener implements View.OnClickListener{
-        private final Class aClass;
+        private Class aClass;
+        private Context context;
 
-        private ClickListener(Class aClass){
+        public Context getContext(){
+            return this.context;
+        }
+
+
+        private ClickListener(Context context, Class aClass){
             this.aClass = aClass;
+            this.context = context;
 
         }
         @Override
@@ -113,9 +79,7 @@ public class MainActivity extends AppCompatActivity {
 
         }
     }
-    public Context getContext(){
-        return this;
-    }
+
 
 
 
