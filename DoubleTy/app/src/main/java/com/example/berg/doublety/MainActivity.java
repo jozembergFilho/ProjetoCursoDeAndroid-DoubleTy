@@ -4,6 +4,7 @@ import android.app.DialogFragment;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.media.Image;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -23,34 +24,43 @@ import android.view.View.OnClickListener;
 public class MainActivity extends AppCompatActivity {
 
     private AlertDialog alerta;
-    private View btnSair;
-    private View btnPraticar;
-    private View btnManual;
-    private ImageView ranking;
+    private View btnSair, btnPraticar, btnManual;
+    private ImageView btnSobre;
+    private ImageView btnRanking;
+    private ImageView btnSettings;
 
+    private DoubleTyApplication application;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        exbirAlertaDialog();
+        application = (DoubleTyApplication) getApplicationContext();
 
+        if(application.isDialog()){
+            exbirAlertaDialog();
+        }
         //exemplo_layout();
         btnSair = findViewById(R.id.btn_sair);
         btnPraticar = findViewById(R.id.btn_praticar);
         btnManual = findViewById(R.id.btn_exercicios);
+        btnSobre = (ImageView)findViewById(R.id.img_sobre);
+        btnRanking = (ImageView)findViewById(R.id.img_ranking);
+        btnSettings = (ImageView)findViewById(R.id.img_settings);
 
         btnPraticar.setOnClickListener(new ClickListener(this,PraticarActivity.class));
         btnManual.setOnClickListener(new ClickListener(this,ManualActivity.class));
         btnSair.setOnClickListener(new ClickListener(this,null));
+        btnSobre.setOnClickListener(new ClickListener(this,SobreActivity.class));
+        btnRanking.setOnClickListener(new ClickListener(this,RankingActivity.class));
+        btnSettings.setOnClickListener(new ClickListener(this, SettingsActivity.class));
+
 
     }
     private void exbirAlertaDialog(){
         DialogFragment usuario = new CadastroUsuarioFragment();
         usuario.show(getFragmentManager(),"usuario");
-
     }
-
     private class ClickListener implements View.OnClickListener{
         private Class aClass;
         private Context context;
@@ -58,32 +68,24 @@ public class MainActivity extends AppCompatActivity {
         public Context getContext(){
             return this.context;
         }
-
-
         private ClickListener(Context context, Class aClass){
-            this.aClass = aClass;
             this.context = context;
-
+            this.aClass = aClass;
         }
         @Override
         public void onClick(View v) {
             if(aClass == null){
-                finish();
+                MainActivity.this.finish();
             }
             else{
+                application.setDialog(false);
                 Intent intent = new Intent(getContext(),aClass);
                 startActivity(intent);
-                finish();
+                MainActivity.this.finish();
             }
 
 
         }
     }
-
-
-
-
-
-
 
 }

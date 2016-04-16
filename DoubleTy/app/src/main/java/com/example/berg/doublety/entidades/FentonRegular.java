@@ -11,18 +11,22 @@ import android.widget.TextView;
 public class FentonRegular extends TextView {
     public FentonRegular(Context context) {
         super(context);
+        setTypefaceFat(context);
     }
 
     public FentonRegular(Context context, AttributeSet attrs) {
         super(context, attrs);
+        setTypefaceFat(context);
     }
 
     public FentonRegular(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+        setTypefaceFat(context);
     }
 
     public FentonRegular(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
+        setTypefaceFat(context);
     }
     private void setTypefaceFat(Context context){
         Typeface typeface = Typeface.createFromAsset(context.getAssets(), "fonts/fenton_regular.otf");

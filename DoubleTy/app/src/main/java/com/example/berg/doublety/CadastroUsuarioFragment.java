@@ -42,14 +42,13 @@ public class CadastroUsuarioFragment extends DialogFragment {
         final View view = inflater.inflate(R.layout.activity_cadastro, container, false);
 
 
-
         Button confirmar = (Button) view.findViewById(R.id.btn);
 
 
         confirmar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                EditText nomeUsuario = (EditText)view.findViewById(R.id.usuario);
+                nomeUsuario = (EditText)view.findViewById(R.id.usuario);
                 String texto = nomeUsuario.getText().toString();
                 if (TextUtils.isEmpty(texto)) {
                     nomeUsuario.setError("Campo vazio!");
@@ -60,7 +59,7 @@ public class CadastroUsuarioFragment extends DialogFragment {
                     bundle.putString("nome", texto);
                     intent.putExtras(bundle);
                     dismiss();
-                    Toast.makeText(getActivity(),"Bem vindo " + texto+"!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(),"Bem vindo " + texto +"!", Toast.LENGTH_SHORT).show();
                 }
             }
         });
