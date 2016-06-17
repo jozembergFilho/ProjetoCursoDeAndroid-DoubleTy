@@ -44,27 +44,11 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:layout_marginTop="16dp"
-            android:text="Desenvolvido por: Ittalo e Jozemberg"
+            android:text="Desenvolvido por: Jozemberg"
             android:textSize="20sp"
             />
 
-        <com.example.berg.doublety.entidades.FentonBold
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Supervisora: Vanessa Dantas"
-            android:layout_marginTop="4dp"
-            android:textSize="20sp"
-            />
 
-        <com.example.berg.doublety.entidades.FentonBold
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:layout_marginTop="4dp"
-            android:text="Disciplina: Estágio Supervisionado III"
-            android:textSize="18sp"
-            />
 
     </LinearLayout>
 

@@ -4,13 +4,31 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
+    android:padding="16dp"
     >
 
-    <TextView
-        android:layout_width="wrap_content"
+
+    <ImageView
+        android:layout_width="128dp"
+        android:layout_height="128dp"
+        android:src="@drawable/python_logo"
+        />
+
+    <com.example.berg.doublety.entidades.FentonBold
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Conteúdos que serão abordados."
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:textColor="@color/md_text"
+        android:text="O DoubleTy trabalha com conceitos primitivos da linguagem de programação python:"
+        />
+
+    <com.example.berg.doublety.entidades.FentonBold
+        android:layout_marginTop="18dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/md_text"
+        android:text="- Estrutura sequencial(variáveis, I/O)\n- Estrutura condicional(if, elif e else)\n- Estrutura de repetição(while e for)"
+        />
+
 
 
 </LinearLayout>

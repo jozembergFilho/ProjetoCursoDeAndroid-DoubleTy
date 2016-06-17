@@ -21,7 +21,7 @@ public class RankingActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ranking);
 
-        rankingJogador = (TextView)findViewById(R.id.rankingJogador);
+        //rankingJogador = (TextView)findViewById(R.id.rankingJogador);
         toolbar = (Toolbar)findViewById(R.id.toolbarRanking);
 
         setSupportActionBar(toolbar);

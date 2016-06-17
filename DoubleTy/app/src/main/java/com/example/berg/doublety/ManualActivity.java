@@ -11,7 +11,6 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.TableLayout;
 
 import com.example.berg.doublety.fragments.Fragment01;
 import com.example.berg.doublety.fragments.Fragment02;
@@ -34,7 +33,7 @@ public class ManualActivity extends AppCompatActivity {
         toolbar = (Toolbar)findViewById(R.id.toolbarManual);
 
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("Manual");
+        getSupportActionBar().setTitle("Instruções");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         SelectionPagerAdapter sp = new SelectionPagerAdapter(getSupportFragmentManager());

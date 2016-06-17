@@ -3,16 +3,32 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center"
-    >
+    android:padding="16dp"
+    android:gravity="center">
 
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Explicação sobre a pontuação."
-        android:textAppearance="?android:attr/textAppearanceLarge"
+    <ImageView
+        android:layout_width="128dp"
+        android:layout_height="128dp"
+        android:src="@drawable/ic_trofeu"
         />
+
+    <com.example.berg.doublety.entidades.FentonBold
+        android:layout_marginTop="18dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/md_text"
+        android:text="Com o DoubleTy você acompanha o ranking de pontuação de todos os jogadores."
+        />
+
+    <com.example.berg.doublety.entidades.FentonBold
+        android:layout_marginTop="18dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/md_text"
+        android:text="A cada resposta correta é acrescentado 10 pontos ao jogador e respostas erradas é retirado 5 pontos."
+        />
+
+
 
 
 </LinearLayout>

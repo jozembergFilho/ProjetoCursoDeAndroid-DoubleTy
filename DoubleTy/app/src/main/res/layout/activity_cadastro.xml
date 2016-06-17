@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:gravity="center"
@@ -15,8 +15,6 @@
         android:id="@+id/imageView2"
         android:layout_width="64dp"
         android:layout_height="64dp"
-        android:layout_above="@+id/cadastroUsuario"
-        android:layout_centerHorizontal="true"
         android:src="@drawable/ic_login" />
 
 
@@ -33,6 +31,7 @@
             android:layout_alignParentStart="true"
             android:layout_below="@+id/imageView2"
             android:hint="Digite seu nome"
+            android:maxLines="1"
             android:lines="1"
             android:textSize="16sp" />
 
@@ -45,7 +44,7 @@
         android:text="Confirmar"
         android:layout_margin="16dp"
         android:clickable="true"
-        android:textColor="@color/colorPrimary"
+        android:textColor="?attr/colorPrimary"
         android:id="@+id/btn"
         android:layout_gravity="right" />
 

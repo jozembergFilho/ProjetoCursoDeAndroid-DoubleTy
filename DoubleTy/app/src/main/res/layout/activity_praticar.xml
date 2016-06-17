@@ -4,23 +4,86 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="?attr/colorPrimary"
     android:orientation="vertical"
-    tools:context="com.example.berg.doublety.PraticarActivity">
+    tools:context="com.example.berg.doublety.ManualActivity">
 
     <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbarPraticar"
+        android:id="@+id/toolbarManual"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary"
-        app:titleTextColor="#FFF"
+        android:background="@android:color/transparent"
+        app:titleTextColor="#FFF" />
 
-        ></android.support.v7.widget.Toolbar>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <com.example.berg.doublety.entidades.FentonRegular
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="double-t"
+                android:textColor="@android:color/white"
+                android:textSize="32sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Conteúdos"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:textSize="24sp" />
 
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Tela de exercicios"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <Button
+                android:id="@+id/btn_praticar1"
+                android:layout_width="match_parent"
+                android:layout_height="128dp"
+                android:background="@drawable/raised_button_blue_2"
+                android:text="SEQUENCIAL"
+                android:textColor="#FFF" />
+
+            <Button
+                android:id="@+id/btn_praticar2"
+                android:layout_width="match_parent"
+                android:layout_height="128dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/raised_button_blue_2"
+                android:text="CONDICIONAL"
+                android:textColor="#FFF" />
+
+            <Button
+                android:id="@+id/btn_praticar3"
+                android:layout_width="match_parent"
+                android:layout_height="128dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/raised_button_blue_2"
+                android:text="REPETIÇÃO"
+                android:textColor="#FFF" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
 </LinearLayout>
